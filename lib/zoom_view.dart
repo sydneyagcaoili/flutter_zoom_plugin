@@ -65,8 +65,12 @@ class ZoomViewController {
     assert(options != null);
 
     var optionMap = new Map<String, String>();
-    optionMap.putIfAbsent("appKey", () => options.appKey);
-    optionMap.putIfAbsent("appSecret", () => options.appSecret);
+    if (options.containsKey("jwt")) {
+      initParams.jwtToken = options.get("jwt");
+    } else {
+      initParams.appKey = options.get("appKey");
+      initParams.appSecret = options.get("appSecret");
+    }
     optionMap.putIfAbsent("domain", () => options.domain);
     return _methodChannel.invokeMethod('init', optionMap);
   }
