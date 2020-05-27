@@ -4,11 +4,13 @@ class ZoomOptions {
   String domain;
   String appKey;
   String appSecret;
+  String jwt;
 
   ZoomOptions({
     this.domain,
     this.appKey,
     this.appSecret,
+    this.jwt
   });
 }
 

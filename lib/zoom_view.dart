@@ -68,7 +68,6 @@ class ZoomViewController {
     optionMap.putIfAbsent("appKey", () => options.appKey);
     optionMap.putIfAbsent("appSecret", () => options.appSecret);
     optionMap.putIfAbsent("domain", () => options.domain);
-
     return _methodChannel.invokeMethod('init', optionMap);
   }
 
